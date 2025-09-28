@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MACA | Matrix Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>MACA: Matrix Calculator</h1>
+      <p>行列を調整し、直感的に積を計算できます。スライダーで行と列の数を 1 〜 5 の範囲で変更し、各要素に整数または小数を入力してください。</p>
+    </header>
+
+    <section class="matrix-section">
+      <div class="matrix-panel" id="matrix-a-panel">
+        <h2>行列 A</h2>
+        <div class="controls">
+          <label>
+            行数: <span id="a-rows-label"></span>
+            <input type="range" id="a-rows" min="1" max="5" value="2">
+          </label>
+          <label>
+            列数: <span id="a-cols-label"></span>
+            <input type="range" id="a-cols" min="1" max="5" value="2">
+          </label>
+        </div>
+        <div class="matrix matrix-horizontal" id="matrix-a"></div>
+      </div>
+
+      <div class="matrix-panel" id="matrix-b-panel">
+        <h2>行列 B</h2>
+        <div class="controls">
+          <div class="rows-sync">
+            <span>行数 (自動): <span id="b-rows-label"></span></span>
+            <small>※ 行列 A の列数に合わせています。</small>
+          </div>
+          <label>
+            列数: <span id="b-cols-label"></span>
+            <input type="range" id="b-cols" min="1" max="5" value="2">
+          </label>
+        </div>
+        <div class="matrix matrix-vertical" id="matrix-b"></div>
+      </div>
+    </section>
+
+    <section class="matrix-section">
+      <div class="matrix-panel result-panel">
+        <h2>積 (A × B)</h2>
+        <div class="matrix" id="matrix-result"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
